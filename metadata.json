@@ -1,0 +1,6 @@
+{
+  "name": "Amar Site",
+  "description": "একটি প্রফেশনাল, রঙিন এবং অ্যানিমেটেড বাংলা ওয়েবসাইট যাতে রয়েছে কাস্টম অ্যাডমিন ও ইউজার ড্যাশবোর্ড, ড্রপডাউন সার্ভিসেস, স্টুডেন্ট রিভিউ, ইন্টারেক্সন ম্যাপিং এবং সম্পূর্ণ ফায়ারবেস কানেকশন।",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

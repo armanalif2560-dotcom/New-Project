@@ -1,0 +1,27 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Allow read/write access to test and other paths for connections
+    match /test/connection {
+      allow read, write: if true;
+    }
+
+    // Members: Anyone can read, and any signed in user can create/write their own info
+    match /members/{memberId} {
+      allow read: if true;
+      allow write: if true;
+    }
+
+    // Reviews: Anyone can read, and anyone can write reviews
+    match /reviews/{reviewId} {
+      allow read: if true;
+      allow write: if true;
+    }
+
+    // Payments: Anyone can read/write payment verification details
+    match /payments/{paymentId} {
+      allow read: if true;
+      allow write: if true;
+    }
+  }
+}

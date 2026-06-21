@@ -1,0 +1,62 @@
+{
+  "entities": {
+    "member": {
+      "title": "Member",
+      "description": "Amar Site-এ যুক্ত হওয়া মানুষজন",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "email": { "type": "string" },
+        "role": { "type": "string", "enum": ["admin", "user"] },
+        "joinedAt": { "type": "string" }
+      },
+      "required": ["id", "name", "email", "role", "joinedAt"]
+    },
+    "review": {
+      "title": "Student Review",
+      "description": "শিক্ষার্থীদের রিভিউ এবং মতামত",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "studentName": { "type": "string" },
+        "courseName": { "type": "string" },
+        "rating": { "type": "number" },
+        "comment": { "type": "string" },
+        "avatarUrl": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["id", "studentName", "courseName", "rating", "comment", "avatarUrl", "createdAt"]
+    },
+    "payment": {
+      "title": "Payment",
+      "description": "সার্ভিস কেনার জন্য পেমেন্ট ডিটেইলস",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userEmail": { "type": "string" },
+        "serviceId": { "type": "string" },
+        "amount": { "type": "number" },
+        "paymentMethod": { "type": "string" },
+        "transactionId": { "type": "string" },
+        "status": { "type": "string", "enum": ["pending", "success"] },
+        "timestamp": { "type": "string" }
+      },
+      "required": ["id", "userEmail", "serviceId", "amount", "paymentMethod", "transactionId", "status", "timestamp"]
+    }
+  },
+  "firestore": {
+    "members/{memberId}": {
+      "schema": "member",
+      "description": "সব রেজিস্টার্ড মেম্বার এবং অ্যাডমিনের তালিকা"
+    },
+    "reviews/{reviewId}": {
+      "schema": "review",
+      "description": "স্টুডেন্টদের দেওয়া রিভিউ কালেকশন"
+    },
+    "payments/{paymentId}": {
+      "schema": "payment",
+      "description": "সার্ভিস কেনার পেমেন্ট কালেকশন"
+    }
+  }
+}
